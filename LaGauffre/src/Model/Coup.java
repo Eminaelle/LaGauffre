@@ -5,14 +5,21 @@
  */
 package Model;
 
+import p.util.Position;
+
 /**
  *
  * @author lucas
  */
 public class Coup extends Position
 {
-    Coup(int x, int y)
+    public Coup(Coup c)
     {
-        super(x,y);
+        this(c.x, c.y);
+    }
+
+    public Coup(int x, int y)
+    {
+        super(x, y);
     }
 }
