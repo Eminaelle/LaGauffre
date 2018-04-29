@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Model.Data.PlateauGaufre;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -44,12 +45,24 @@ public class PlateauTests
     }
 
     @Test
+<<<<<<< HEAD
     public void creationPlateau()
     {
         Plateau p1 = new PlateauGauffre(3,3);
         Boolean tab[][] = {{true,true,true},{true,true,true},{true,true,true}};
         Plateau p2 = new PlateauGauffre(tab);
+=======
+    public void creationPlateauTest()
+    {
+        PlateauGaufre p1 = new PlateauGaufre(3,4);
+        boolean tab[][] = {
+            {true,true,true},
+            {true,true,true},
+            {true,true,true},
+            {true,true,true}};
+        PlateauGaufre p2 = new PlateauGaufre(tab);
+>>>>>>> Moteur
         assert p1.equals(p2);
     }
-    
+
 }
