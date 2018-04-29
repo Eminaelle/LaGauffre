@@ -22,10 +22,9 @@ LaGauffre/build/
 LaGauffre/dist/
 LaGauffre/nbproject/private/
 LaGauffre/nbproject/build-impl.xml
-LaGauffre/nbproject/genfiles.properties
-LaGauffre/nbproject/project.properties
+
 LaGauffre/nbproject/private/private.xml
-LaGauffre/nbproject/private/private.properties
+*.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
