@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Joueur;
+import Model.Coup;
+import Model.PlateauGaufre;
 import java.util.ArrayList;
 /**
  *
@@ -21,7 +23,8 @@ public class JoueurIA extends Joueur{
     
     @Override
     public Coup jouer(){
-        ArbreCoup a = new ArbreCoup(new Noeud (new Coup(-1,-1),null));
+        ArbreCoup a;
+        a = new ArbreCoup(new Noeud (new Coup(-1,-1),null));
         ArrayList<Noeud> noeud;
         noeud = a.creerListNoeud(p, 3);
         a.racine().affecteFils(noeud);

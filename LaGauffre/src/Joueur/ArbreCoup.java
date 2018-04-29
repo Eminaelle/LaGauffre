@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package Joueur;
-package Model;
-
+import Model.Coup;
+import Model.PlateauGaufre;
 import java.util.ArrayList;
 
 /**
@@ -32,17 +32,18 @@ public class ArbreCoup {
     public ArrayList<Noeud> creerListNoeud(PlateauGaufre p, int profondeur){
         ArrayList<Noeud> l = new ArrayList<>();
         ArrayList<Noeud> listeCoup;
+        Temp t = new Temp();
         Coup c;
         Noeud noeudTmp;
-        listeCoup = coupPossible(PlateauGaufre p);
+        listeCoup = t.coupPossible(p);
         while(!listeCoup.isEmpty()){
             noeudTmp = listeCoup.remove(0);
-            c = noeudTmp.c;
-            if(profondeur == 0 || p.getAt(0,0)==false){
+            c = noeudTmp.coup();
+            if(profondeur == 0 || p.at(0,0)==false){
                 l.add(new Noeud( c , null));
             }
             else{
-                l.add(new Noeud(c , creerListNoeud(gaufreApresCoup(c , p), profondeur--)));
+                l.add(new Noeud(c , creerListNoeud(t.gaufreApresCoup(c , p), profondeur--)));
             }
         }
         return l;

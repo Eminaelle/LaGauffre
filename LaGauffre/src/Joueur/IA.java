@@ -5,6 +5,8 @@
  */
 package Joueur;
 
+import Model.Coup;
+import Model.PlateauGaufre;
 import static java.lang.Integer.max;
 import static java.lang.Integer.min;
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class IA {
     
     Coup calculCoup(ArbreCoup a, PlateauGaufre p){
         Coup cMax;
-        ArrayList<ArbreCoup.Noeud> l = a.fils();
+        ArrayList<Noeud> l = a.fils();
  
         switch (d) 
         {
@@ -72,7 +74,8 @@ public class IA {
     }
     
     public int evalA(Noeud n, PlateauGaufre p){
-        PlateauGaufre apresGaufre= gaufreApresCoup(n.c, p);
+        Temp t = new Temp();
+        PlateauGaufre apresGaufre= t.gaufreApresCoup(p,n.c);
         if(n.fils==null){
             return evaluation(apresGaufre);
         }
@@ -91,7 +94,8 @@ public class IA {
     }
     
     public int evalB(Noeud n, PlateauGaufre p){
-        PlateauGaufre apresGaufre= gaufreApresCoup(n.c, p);
+        Temp t = new Temp();
+        PlateauGaufre apresGaufre= t.gaufreApresCoup(p,n.c);
         if(n.fils==null){
             return evaluation(apresGaufre);
         }
@@ -111,9 +115,9 @@ public class IA {
     
     public int evaluation(PlateauGaufre p){
         int m=0, n=0, i=0;
-        boolean diag = p.getAt(1,1);
+        boolean diag = p.at(1,1);
         while(i<p.getLargeur() && m==0){
-            if(!p.getAt(i,0)){
+            if(!p.at(i,0)){
                 m=i;
             }
         }
@@ -121,7 +125,7 @@ public class IA {
             m=i;
         i=0;
         while(i<p.getHauteur() && n==0){
-            if(!p.getAt(i,0)){
+            if(!p.at(i,0)){
                 n=i;
             }
         }

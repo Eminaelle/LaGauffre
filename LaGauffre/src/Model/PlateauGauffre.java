@@ -26,7 +26,7 @@ public class PlateauGauffre extends Plateau<Boolean>
      *
      * @param plateau
      */
-    PlateauGauffre(Boolean plateau[][])
+    public PlateauGauffre(Boolean plateau[][])
     {
         super(plateau);
     }
@@ -49,6 +49,7 @@ public class PlateauGauffre extends Plateau<Boolean>
         }
     }
 
+    
     /**
      * Retourne vrai si le coup a bien été appliqué, false si le coup n'a pas eu
      * d'effet sur la gauffre

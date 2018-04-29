@@ -5,6 +5,8 @@
  */
 package Joueur;
 
+import Model.Coup;
+
 /**
  *
  * @author Coralie
@@ -18,7 +20,8 @@ public class JoueurHumain extends Joueur{
     @Override
     
     public Coup jouer(){
-        return waitForEvent(); //attente clic souris
+        return new Coup(0,0);
+        //return waitForEvent(); //attente clic souris
     }
     
 }

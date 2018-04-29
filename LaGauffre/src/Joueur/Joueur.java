@@ -5,6 +5,8 @@
  */
 package Joueur;
 
+import Model.Coup;
+
 /**
  *
  * @author Coralie

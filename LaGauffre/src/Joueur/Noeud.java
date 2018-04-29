@@ -5,6 +5,7 @@
  */
 package Joueur;
 
+import Model.Coup;
 import java.util.ArrayList;
 
 /**
@@ -21,5 +22,8 @@ public class Noeud {
         }  
         public void affecteFils(ArrayList<Noeud> l){
             fils = l;
+        }
+        public Coup coup(){
+            return c;
         }
     }
